@@ -3,26 +3,12 @@ session_start();
 
 /*
 |--------------------------------------------------------------------------
-| Allowed Domains
-|--------------------------------------------------------------------------
-| This prevents the app from being accessed through unexpected hostnames.
-| You can add staging domains here if needed.
-*/
-$allowedDomains = ['fllapp.glitchedreality.com', 'fllapp2.glitchedreality.com'];
-
-if (!in_array($_SERVER['HTTP_HOST'], $allowedDomains, true)) {
-    header('HTTP/1.0 403 Forbidden');
-    exit('Access forbidden.');
-}
-
-/*
-|--------------------------------------------------------------------------
 | Load Environment Variables
 |--------------------------------------------------------------------------
 | Keeps credentials out of the repo. Your .env file should contain:
-| DB_HOST=localhost
-| DB_NAME=fllapp
-| DB_USER=andy
+| DB_HOST=ip_address_or_hostname
+| DB_NAME=database
+| DB_USER=user
 | DB_PASS=yourpassword
 */
 $env = parse_ini_file(__DIR__ . '/.env');
